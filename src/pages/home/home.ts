@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { NavController,Nav, Slides, LoadingController, Platform, AlertController,NavParams } from "ionic-angular";
+import { NavController, Slides, LoadingController, Platform, AlertController,NavParams } from "ionic-angular";
 import { ServicePage } from "../service/service";
 import { CablePage } from "../cable/cable";
 import { AboutPage } from "../about/about";
