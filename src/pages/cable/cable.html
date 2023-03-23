@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>เคเบิลทีวี</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  fullscreen="true">
+
+      <ion-card>
+        <img *ngIf="img_cable1" [src]="img_cable1" width="100%">
+      </ion-card>
+ 
+    <ion-card padding>
+        <b>เคเบิลทีวีท้องถิ่น</b>
+       ส่งตรงความบันเทิงและสาระด้วยรายการทีวีน่าสนใจจากทั่วทุกมุมโลกทั้งรูปแบบ ANALOG และ DIGITAL คมชัด บริการรวดเร็วฉับไว
+    </ion-card>
+
+    <ion-card>
+        <img *ngIf="img_cable1" [src]="img_tmn1">
+    </ion-card>
+  
+    <ion-card>
+      <img *ngIf="img_cable1" [src]="img_tmn2">
+    </ion-card>
+  
+    <ion-card>
+      <img *ngIf="img_cable1" [src]="img_tmn3">
+    </ion-card>
+  
+    <ion-card>
+      <img *ngIf="img_cable1" [src]="img_tmn4">
+    </ion-card>
+
+    <ion-item>
+      <a href="https://page.line.me/tmn.pattaya?openQrModal=true" target="_blank"><img *ngIf="img_conn" [src]="img_conn" width="350" height="70"></a>
+    </ion-item>
+ 
+    <ion-card padding>
+      <img *ngIf="img_Digital" [src]="img_Digital" class="thumb-img" imageViewer>
+      <p>คลิกรูปเพื่อขยาย (Digital TV)</p>
+    </ion-card>
+
+    <ion-card padding>
+      <img *ngIf="img_Analog" [src]="img_Analog" class="thumb-img" imageViewer>
+      <p>คลิกรูปเพื่อขยาย (Analog TV)</p>
+    </ion-card>
+
+</ion-content>
+

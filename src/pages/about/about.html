@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      อินเตอร์เน็ต
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  fullscreen="true" class="">    
+
+    <ion-card>
+      <img *ngIf="img_net_tmn" [src]="img_net_tmn">
+    </ion-card>
+    <ion-card padding>
+      <b>Fiber Optic อินเตอร์เน็ต ความเร็วสูง</b><br>
+      บริการอินเตอร์เน็ตความเร็วสูง ด้วยการเชื่อมต่อผ่านสายสัญญาณไฟเบอร์ ออฟติก ที่รองรับเทคโนโลยีแห่งอนาคต ตอบสนองได้ทุกความต้องการ 
+      <br>วันนี้เราพร้อมแล้ว สำหรับการให้บริการที่ครอบคลุมทั่วทุกพื้นที่ของพัทยา และพื้นที่ใกล้เคียง ติดตั้งรวดเร็ว ด้วยทีมช่างที่ชำนาญ เชิญสัมผัสกับบริการในระดับพรีเมี่ยมได้แล้ววันนี้.
+      <br>*ราคายังไม่รวมภาษีมูลค่าเพิ่ม (Vat 7%)*
+    </ion-card>
+
+    <ion-card (click)="contact()">
+      <img *ngIf="img_net_tmn" [src]="img_s01">
+    </ion-card>
+  
+    <ion-card (click)="contact()">
+      <img *ngIf="img_net_tmn" [src]="img_s02">
+    </ion-card>
+  
+    <ion-card (click)="contact()">
+      <img *ngIf="img_net_tmn" [src]="img_s03">
+    </ion-card>
+
+    <ion-card (click)="contact()">
+      <img *ngIf="img_net_tmn" [src]="img_s04">
+    </ion-card>
+
+</ion-content>

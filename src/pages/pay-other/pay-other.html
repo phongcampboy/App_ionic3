@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Payment history</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h5 align="center"><u>Payment history</u></h5> 
+    <ion-card-content>
+          <div *ngIf="formLanguage==0">
+            <ion-item *ngFor="let item of datapay"  class="text_size">
+              <b>รหัสสมาชิก: {{item.MemberID}}</b> <br>
+              <b>ราคา: {{item.Total}}</b><br>
+              <b>รอบใช้บริการ: {{item.LastPay}} <br>ถึง {{item.NextPay}}</b><br>
+              <b class="text_red">ชำระเงินเรียบร้อยแล้ว</b><BR>
+             <!--  <button ion-button outline (click)="Open(item.InvoiceID)">Open</button> -->
+            </ion-item>
+          </div>
+          <div *ngIf="formLanguage==1">
+            <ion-item *ngFor="let item of datapay"  class="text_size">
+              <b>MemberID: {{item.MemberID}}</b> <br>
+              <b>Total: {{item.Total}}</b><br>
+              <b>Service round: {{item.LastPay}} <br>to {{item.NextPay}}</b><br>
+              <b class="text_red">Payment has been made</b><BR>
+             <!--  <button ion-button outline (click)="Open(item.InvoiceID)">Open</button> -->
+            </ion-item>
+          </div>
+    </ion-card-content>
+</ion-content>

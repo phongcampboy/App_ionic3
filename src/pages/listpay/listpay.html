@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Payment history</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<div *ngIf="formLanguage==0">
+  <div class="boxmemberlist" *ngFor="let item of dataitem">
+    <p></p>
+          <b>รหัสสมาชิก: {{item.MemberID}}</b><br>
+          <b>ชื่อ:  {{item.FirstName}}  {{item.LastName}}</b><br>
+    <!--       <b class="ion-2x ion-social-pinterest"> ที่อยู่:  เลขที่ {{item.StreetNo}}  <br> หมู่ {{item.Moo}}{{item.Mooban}}</b><br> -->
+          <b class="ion-2x ion-social-pinterest">เบอร์โทร: {{item.Tel1}}</b><br>
+          <b class="ion-2x ion-social-pinterest">ประเภทบริการ: {{item.DescriptionRate}}</b>
+    <p></p>
+      </div>
+    
+    <ion-card-content>
+          <ion-item *ngFor="let item of datapay"  class="text_size">
+            <b>รหัสสมาชิก: {{item.MemberID}}</b> <br>
+            <b>ราคา: {{item.Total}}</b><br>
+            <b>รอบใช้บริการ: {{item.LastPay}} <br>ถึง {{item.NextPay}}</b><br>
+            <b class="text_red">ชำระเงินเรียบร้อยแล้ว</b><br>
+           <!--  <button ion-button outline (click)="Open(item.InvoiceID)">Open</button> -->
+          </ion-item>
+    </ion-card-content>
+</div>
+
+<div *ngIf="formLanguage==1">
+  <div class="boxmemberlist" *ngFor="let item of dataitem">
+    <p></p>
+          <b>MemberID: {{item.MemberID}}</b><br>
+          <b>Name:  {{item.FirstName}}  {{item.LastName}}</b><br>
+    <!--       <b class="ion-2x ion-social-pinterest"> ที่อยู่:  เลขที่ {{item.StreetNo}}  <br> หมู่ {{item.Moo}}{{item.Mooban}}</b><br> -->
+          <b class="ion-2x ion-social-pinterest">Phone number: {{item.Tel1}}</b><br>
+          <b class="ion-2x ion-social-pinterest">Service type: {{item.DescriptionRate}}</b>
+    <p></p>
+      </div>
+    
+    <ion-card-content>
+          <ion-item *ngFor="let item of datapay"  class="text_size">
+            <b>MemberID: {{item.MemberID}}</b> <br>
+            <b>Total: {{item.Total}}</b><br>
+            <b>Service round: {{item.LastPay}} <br>to {{item.NextPay}}</b><br>
+            <b class="text_red">Payment has been made</b><br>
+           <!--  <button ion-button outline (click)="Open(item.InvoiceID)">Open</button> -->
+          </ion-item>
+    </ion-card-content>
+</div>
+
+</ion-content>
+  

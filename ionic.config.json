@@ -1,0 +1,10 @@
+{
+  "name": "helloWorld",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {
+      "enabled": false
+    }
+  },
+  "type": "ionic-angular"
+}

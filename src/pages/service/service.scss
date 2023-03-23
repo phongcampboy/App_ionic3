@@ -1,0 +1,38 @@
+.card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: left;
+    }
+  
+    .card-title {
+      position: absolute;
+      left: 20px;
+      top: 10%;
+      font-size: 1.1em;
+      width: 100%;
+      font-weight: bold;
+      color: rgb(248, 20, 20);
+    }
+  
+    .card-subtitle {
+      font-size: 13px;
+      position: absolute;
+      left: 20px;
+      top: 30%;
+      width: 100%;
+      color: rgb(10, 10, 10);
+    }
+    .box1{
+      background: #faf6f6;
+      border: #CCC solid 1px;
+      background-repeat:repeat-x;
+      width:49%; height:70px;
+      border-radius:5px;
+      -moz-border-radius:5px;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-box-shadow: 1 0 15px #fff;
+      }
+  }
+  

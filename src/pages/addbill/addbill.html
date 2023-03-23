@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add member code</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding fullscreen="true">
+
+  <div  *ngIf="formLanguage==0">
+
+    <ion-card *ngIf="data_me !==null">
+  
+      <ion-card-content>
+          <ion-item *ngFor="let item of data_me">
+            <h3><B>รหัสสมาชิก: {{item.MemberID}}</B></h3>
+            <h5>ชื่อ-สกุล:  {{item.FirstName}}  {{item.LastName}}</h5>
+            <div *ngIf="msg_status==01"><h6>สถานะ <button ion-button small outline>ปกติ</button></h6></div>
+            <div *ngIf="msg_status==02"><h6>สถานะ <button ion-button small outline color="danger">ตัดสาย</button></h6></div>
+            <div *ngIf="msg_status==10"><h6>สถานะ <button ion-button small outline color="danger">บล็อกสัญญาณชั่วคราว</button></h6></div>
+      
+          </ion-item>
+      </ion-card-content>
+      </ion-card>
+    
+      <ion-grid>
+        <ion-row>
+         <button ion-fab color="secondary" mini (click)="addmember()"><ion-icon name="add"></ion-icon></button>
+       <!--  <button ion-button small outline mini (click)="addmember()">เพิ่มรหัส</button> -->
+        <div *ngIf="this.add">
+        <ion-item>
+          <ion-label floating>กรอกรหัสสมาชิก</ion-label>
+          <ion-input type="text"[(ngModel)]="postdata.id_save"></ion-input>
+        </ion-item>
+          <!--  <button ion-button small (click)="addbill()">ยืนยัน</button> -->
+           <button ion-button small outline item-end icon-start (click)="addbill()">
+            <ion-icon name="md-person-add"></ion-icon>
+            ยืนยัน
+          </button>
+        </div>
+      </ion-row>
+      </ion-grid>
+      
+      <ion-list *ngIf="items !==null">
+    
+        <h5 align="center"><u>รหัสสมาชิกที่เพิ่มเข้ามา</u></h5>
+       
+        <ion-item *ngFor="let item of items">
+          <h2>รหัสสมาชิก: {{item.id_save}} </h2>
+          <h5>ชื่อ-สกุล: {{item.FirstName}} {{item.LastName}}</h5>
+          <div *ngIf="item.MemberStatusID==0001"><H6>สถานะ <button ion-button small outline>ปกติ</button></H6></div>
+          <div *ngIf="item.MemberStatusID==0002"><H6>สถานะ <button ion-button small outline color="danger">ตัดสาย</button></H6></div>
+          <div *ngIf="item.MemberStatusID==0010"><H6>สถานะ <button ion-button small outline color="danger">บล็อกสัญญาณชั่วคราว</button></H6></div>
+     
+        <ion-grid>
+    
+          <ion-row>
+    
+            <ion-col class="ion-align-self-start" style="border: 0px">
+            
+                <button ion-button small color="danger" *ngIf="item.Pay==0" (click)="billPay(item.id_save)">ยอดที่ต้องชำระ : {{item.tal}}.-</button>
+                <button ion-button small color="" *ngIf="item.Pay!=0">ไม่ค้างชำระ</button>
+             
+            </ion-col>
+            
+            <ion-col class="ion-align-self-start" style="border: 0px">
+             <button ion-button small (click)="listpay(item.id_save)">ประวัติการชำระ</button>
+            </ion-col>
+    
+            <ion-col class="ion-align-self-start" style="border: 0px">
+           
+                <button ion-button icon-star small color="danger"(click)="deletmember(item.id_save)">
+                <ion-icon name="ios-trash"></ion-icon>ลบ
+                </button>
+           
+            </ion-col>
+    
+          </ion-row>
+       
+        </ion-grid>
+    
+        </ion-item>
+      </ion-list>
+  </div>
+  
+
+  <div  *ngIf="formLanguage==1">
+
+    <ion-card *ngIf="data_me !==null">
+  
+      <ion-card-content>
+          <ion-item *ngFor="let item of data_me">
+            <h3><B>MemberID: {{item.MemberID}}</B></h3>
+            <h5>Name-SerName:  {{item.FirstName}}  {{item.LastName}}</h5>
+            <div *ngIf="msg_status==01"><h6>Status <button ion-button small outline>Normal</button></h6></div>
+            <div *ngIf="msg_status==02"><h6>Status <button ion-button small outline color="danger">Cut off</button></h6></div>
+            <div *ngIf="msg_status==10"><h6>Status <button ion-button small outline color="danger">Temporarily block signal</button></h6></div>
+      
+          </ion-item>
+      </ion-card-content>
+      </ion-card>
+    
+      <ion-grid>
+        <ion-row>
+         <button ion-fab color="secondary" mini (click)="addmember()"><ion-icon name="add"></ion-icon></button>
+       <!--  <button ion-button small outline mini (click)="addmember()">เพิ่มรหัส</button> -->
+        <div *ngIf="this.add">
+        <ion-item>
+          <ion-label floating>Fill in member code</ion-label>
+          <ion-input type="text"[(ngModel)]="postdata.id_save"></ion-input>
+        </ion-item>
+          <!--  <button ion-button small (click)="addbill()">ยืนยัน</button> -->
+           <button ion-button small outline item-end icon-start (click)="addbill()">
+            <ion-icon name="md-person-add"></ion-icon>
+            Confirm
+          </button>
+        </div>
+      </ion-row>
+      </ion-grid>
+      
+      <ion-list *ngIf="items !==null">
+    
+        <h5 align="center"><u>Added member code</u></h5>
+       
+        <ion-item *ngFor="let item of items">
+          <h2>MemberID: {{item.id_save}} </h2>
+          <h5>Name-SerName: {{item.FirstName}} {{item.LastName}}</h5>
+          <div *ngIf="item.MemberStatusID==0001"><H6>Status <button ion-button small outline>Normal</button></H6></div>
+          <div *ngIf="item.MemberStatusID==0002"><H6>Status <button ion-button small outline color="danger">Cut off</button></H6></div>
+          <div *ngIf="item.MemberStatusID==0010"><H6>Status <button ion-button small outline color="danger">Temporarily block signal</button></H6></div>
+     
+        <ion-grid>
+    
+          <ion-row>
+    
+            <ion-col class="ion-align-self-start" style="border: 0px">
+            
+                <button ion-button small color="danger" *ngIf="item.Pay==0" (click)="billPay(item.id_save)">Amount total : {{item.tal}}.-</button>
+                <button ion-button small color="" *ngIf="item.Pay!=0">Not overdue</button>
+             
+            </ion-col>
+            
+            <ion-col class="ion-align-self-start" style="border: 0px">
+             <button ion-button small (click)="listpay(item.id_save)">Payment history</button>
+            </ion-col>
+    
+            <ion-col class="ion-align-self-start" style="border: 0px">
+           
+                <button ion-button icon-star small color="danger"(click)="deletmember(item.id_save)">
+                <ion-icon name="ios-trash"></ion-icon>Delete
+                </button>
+           
+            </ion-col>
+    
+          </ion-row>
+       
+        </ion-grid>
+    
+        </ion-item>
+      </ion-list>
+  </div>
+</ion-content>
+

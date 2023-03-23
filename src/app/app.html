@@ -1,0 +1,57 @@
+<ion-menu [content]="mycontent" side="right">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>MENU</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal" menuClose>
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list
+      radio-group
+      [(ngModel)]="defaultLanguage"
+      [ngModelOptions]="{standalone : true}"
+    >
+      <ion-item> เปลี่ยนภาษา/Switch Language </ion-item>
+      <ion-item>
+        <ion-label
+          ><img src="assets/imgs/th.png" width="50" height="30"
+        /></ion-label>
+        <ion-radio
+          value="0"
+          (ionSelect)="settingLanguage('0', 'Thai')"
+        ></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label
+          ><img src="assets/imgs/en.png" width="50" height="30"
+        /></ion-label>
+        <ion-radio
+          value="1"
+          (ionSelect)="settingLanguage('1', 'English')"
+        ></ion-radio>
+      </ion-item>
+
+      <ion-item menuClose (click)="logout()">
+        ลงชื่อออก/Sign out
+        <ion-icon name="ios-log-out-outline" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item menuClose (click)="exitApp()">
+        Exit the application
+        <ion-icon name="exit" item-right></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <p><b>Version: </b>{{versionNumber}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

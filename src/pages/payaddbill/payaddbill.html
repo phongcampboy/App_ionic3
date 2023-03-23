@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Service payment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <div class="box" *ngIf="formLanguage==0">
+    <p></p>
+    <div align="center"><img *ngIf="logobill" [src]="logobill" width="100" height="63"></div>
+    <ion-grid>
+      <div align="center"><B class="ion-1x ion-social-pinterest"> <u> บ.ซุปเปอร์ไฮสปีด อินเทอร์เน็ต จำกัด</u> <br>(สำนักงานใหญ่)</B> </div>
+      <ion-row>
+        
+      
+          เลขที่ 46/20 หมู่ 4 ต.ห้วยใหญ่
+          อ.บางละมุง
+          จ.ชลบุรี 20150
+          โทร.038-249734 , 038-072556-8
+          โทรสาร.038-072563     
+      </ion-row>
+      <hr align= "center" size= "1" width= "100%" color= "#FF0000"> 
+    </ion-grid>
+        <ion-item *ngFor="let item of dataitem"> 
+      
+            รหัสสมาชิก: {{item.MemberID}}<br>
+            ชื่อ: {{item.FirstName}}  {{item.LastName}}<br>
+            ที่อยู่: เลขที่ {{item.StreetNo}} หมู่ {{item.Moo}}<br>
+            {{item.Mooban}} <br>
+            เบอร์โทร: {{item.Tel1}}<br>
+            ประเภทบริการ: {{item.DescriptionRate}}<br>
+            รอบใช้บริการ: {{reversedDate(item.LastPay)}}<br>
+            ถึง {{reversedDate(item.NextPay)}}<br>
+            รวมยอดชำระ: {{FormatNumber(item.Total)}}<br>
+            ({{ArabicNumberToText(item.Total)}})
+     
+        </ion-item>
+      <ion-col col-12>
+      
+        <div align="center"><img *ngIf="qrcode" [src]="qrcode"></div>
+        
+        <ion-card-content *ngIf="createdCode">
+          <b>
+            <div align="center">{{createdCode}}<br>
+              ลูกค้าชำระค่าบริการได้ที่ศูนย์บริการ TMN<br>
+              หรือ ชำระที่เคาน์เตอร์เซอร์วิส 7-Eleven<br>
+              ชำระค่าบริการผ่าน เคเบิล ไทยบิลลิ่ง<br>
+            * โปรดตรวจสอบความถูกต้องของเอกสาร *
+            </div><br>
+            
+         </b>       
+        </ion-card-content>                      
+      </ion-col>
+  </div>
+ 
+  <div class="box" *ngIf="formLanguage==1">
+    <p></p>
+    <div align="center"><img *ngIf="logobill" [src]="logobill" width="100" height="63"></div>
+    <ion-grid>
+      <div align="center"><B class="ion-1x ion-social-pinterest"> <u>SUPER HI SPEED INTERNET CO.,LTD</u></B> </div>
+      <ion-row>
+        46/20 moo 4 Huay Yai Subdistrict Bang Lamung, Chon Buri 20150
+        Tel.038-249734 , 038-072556-8    
+      </ion-row>
+      <hr align= "center" size= "1" width= "100%" color= "#FF0000"> 
+    </ion-grid>
+        <ion-item *ngFor="let item of dataitem"> 
+      
+          MemberID: {{item.MemberID}}<br>
+          Name: {{item.FirstName}}  {{item.LastName}}<br>
+          Address: เลขที่ {{item.StreetNo}} หมู่ {{item.Moo}}<br>
+          {{item.Mooban}} <br>
+          Phone number: {{item.Tel1}}<br>
+          Service type: {{item.DescriptionRate}}<br>
+          Service round: {{reversedDate(item.LastPay)}} <br>
+          to {{reversedDate(item.NextPay)}}<br>
+          Total: {{FormatNumberEN(item.Total)}}<br>
+     
+        </ion-item>
+      <ion-col col-12>
+      
+        <div align="center"><img *ngIf="qrcode" [src]="qrcode"></div>
+        
+        <ion-card-content *ngIf="createdCode">
+          <b>
+            <div align="center">{{createdCode}}<br>
+              Customers pay service <br> at TMN service centers<br>
+              or pay at counter service 7-Eleven<br>
+              Pay for service via Cable Thai Billing<br>
+            * Please verify the correctness <br> of the document.*
+            </div><br>            
+         </b>       
+        </ion-card-content>                      
+      </ion-col>
+  </div>
+</ion-content>

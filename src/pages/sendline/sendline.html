@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>แจ้งปัญหาเร่งด่วน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="msg" (ngSubmit)="Chk_msg()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>ชื่อ-สกุล</ion-label>
+        <ion-input type="text" formControlName="Name" [(ngModel)]="postdata.Name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เบอร์โทรศัพท์</ion-label>
+        <ion-input type="text" formControlName="tel" maxlength="10" [(ngModel)]="postdata.tel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ข้อความ</ion-label>
+        <ion-textarea rows="3" type="text" formControlName="message" [(ngModel)]="postdata.message"></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <button type="submit" [disabled]="!msg.valid" block ion-button color="secondary">ส่งข้อความ</button>
+    </div>
+  </form>
+
+  <ion-card *ngFor="let item of data_line">
+    <ion-card-header>
+      ชื่อ: {{item.Name_member}}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{item.Detail}}</p>
+      <ion-note>{{item.Daytime}}</ion-note>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

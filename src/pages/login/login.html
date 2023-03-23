@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>หน้าล็อกอิน/Login</ion-title>
+  <!--   <label class="switch">
+      <input type="checkbox" id="togBtn" [(ngModel)]="myvar" [checked]=getLanguage()>
+      <div class="slider"></div>
+    </label>  --> 
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="formLanguage==0">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="logindata.user"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="logindata.pass"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full color="secondary" (click)="clicklogin()">
+      ล็อกอิน
+    </button>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="md-contact" item-start large></ion-icon>
+        กรุณาลงทะเบียนสมาชิก
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Add card content here! -->
+        เพื่อกำหนด Username และ Password สำหรับการเข้าสู่ระบบครั้งแรก
+      </ion-card-content>
+      <div align="center">
+        <button ion-button small color="secondary" (click)="register()">
+          ลงทะเบียน
+        </button>
+        <button ion-button small color="tertiary" (click)="manual()">
+          คู่มือการใช้งาน
+        </button>
+      </div>
+    </ion-card>
+  </div>
+
+  <div *ngIf="formLanguage==1">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="logindata.user"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="logindata.pass"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full color="secondary" (click)="clicklogin()">
+      Login
+    </button>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-icon name="md-contact" item-start large></ion-icon>
+      Please register as a member.
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Add card content here! -->
+        to set a Username and Password for the first login
+      </ion-card-content>
+      <div align="center">
+        <button ion-button small color="secondary" (click)="register()">
+          REGISTER
+        </button>
+        <button ion-button small color="tertiary" (click)="manual()">
+          Instruction Manual
+        </button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

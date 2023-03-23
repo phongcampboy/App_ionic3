@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Change password</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div *ngIf="formLanguage==0">
+  <form [formGroup]="reg" (ngSubmit)="Chk_password()">
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label floating>รหัสผ่านปัจจุบัน</ion-label>
+        <ion-input type="text" formControlName="Username" maxlength="10" [(ngModel)]="postdata.User_app"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>รหัสผ่านใหม่ (4-10 ตัวอักษร)</ion-label>
+        <ion-input type="password" formControlName="Password" maxlength="10" [(ngModel)]="postdata.Pass_app"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>ยืนยันรหัสผ่านใหม่</ion-label>
+        <ion-input type="password" formControlName="Con_password" [(ngModel)]="Chk_pass"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <div>
+      <button type="submit" [disabled]="!reg.valid" block ion-button color="secondary">ยืนยัน</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="formLanguage==1">
+  <form [formGroup]="reg" (ngSubmit)="Chk_password()">
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label floating>Current password</ion-label>
+        <ion-input type="text" formControlName="Username" maxlength="10" [(ngModel)]="postdata.User_app"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>New password (4-10)</ion-label>
+        <ion-input type="password" formControlName="Password" maxlength="10" [(ngModel)]="postdata.Pass_app"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirm new password</ion-label>
+        <ion-input type="password" formControlName="Con_password" [(ngModel)]="Chk_pass"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <div>
+      <button type="submit" [disabled]="!reg.valid" block ion-button color="secondary">Send</button>
+    </div>
+  </form>
+</div>
+</ion-content>
