@@ -92,7 +92,7 @@ export class HomePage {
  
    //เช็คคอนเน็คดาต้าเบส
     //let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/appdata/tmn_conn.php";
-    let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmn_conn.php";
+    let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmn_conn.php";
     let datapost = new FormData();
 
     datapost.append("user_log", this.user_log);

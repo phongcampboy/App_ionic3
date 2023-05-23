@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class ApiProvider {
 
-  baseURL = "http://tmnoffice.dyndns.tv:8000/tmn/App_New/";
+  baseURL = "http://tmnoffice.dyndns.tv:8000/App_New/";
   loading: any;
   isLoggedIn: Boolean = false;
   user: any = null;
