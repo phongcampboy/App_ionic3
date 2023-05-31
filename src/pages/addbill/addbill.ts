@@ -134,7 +134,7 @@ export class AddbillPage {
     });
 
 
-    let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmn_receipt.php";
+    let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmn_receipt.php";
 
     this.http
       .post(url, DataPost)
@@ -172,7 +172,7 @@ export class AddbillPage {
       memberID: this.ispay,
     });
 
-    let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/appdata/load_member.php";
+    let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/load_member.php";
 
     this.http
       .post(url, DataPost)
@@ -244,7 +244,7 @@ export class AddbillPage {
       Alert.present();
     } else {
 
-      let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/App_New/tmn_addbill.php";
+      let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmn_addbill.php";
 
       let postdataset = new FormData();
 
@@ -295,7 +295,7 @@ export class AddbillPage {
               this.id_del = id;
               //console.log("del=",this.id_del);
 
-              let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmndel.php";
+              let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmndel.php";
 
               let postdataset = new FormData();
 
@@ -342,7 +342,7 @@ export class AddbillPage {
               this.id_del = id;
               //console.log("del=",this.id_del);
 
-              let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmndel.php";
+              let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmndel.php";
 
               let postdataset = new FormData();
 
@@ -405,7 +405,7 @@ export class AddbillPage {
     });
 
     //console.log('Pos=',postData);
-    let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/load_member.php";
+    let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/load_member.php";
 
     this.http
       .post(url, postData)

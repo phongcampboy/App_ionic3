@@ -63,7 +63,7 @@ export class MyApp {
         
             this.versionNumber = '2.0';
 
-            let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmn_chk_version.php";
+            let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmn_chk_version.php";
             let datapost = new FormData();
         
             datapost.append("chk_version", null);
@@ -94,7 +94,7 @@ export class MyApp {
         } else if(this.platform.is("ios")) {
 
           this.versionNumber = '2.7';
-          let url: string = "http://tmnoffice.dyndns.tv:8000/tmn/Api_App/tmn_chk_ios.php";
+          let url: string = "http://tmnoffice.dyndns.tv:8000/App_New/tmn_chk_ios.php";
             let datapost = new FormData();
         
             datapost.append("chk_version", null);
