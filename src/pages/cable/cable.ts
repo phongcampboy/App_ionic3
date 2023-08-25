@@ -41,7 +41,7 @@ export class CablePage {
       loading.dismiss();
     }, 1000);
 
-      let url: string ="http://tmnoffice.dyndns.tv:8000/tmn/Api_App/img_cable.php";
+      let url: string ="http://10.100.100.221/Api_App/img_cable.php";
       
       let postdataset = new FormData();
   
