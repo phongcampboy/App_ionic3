@@ -37,7 +37,7 @@ export class AboutPage {
 
     //console.log("รูป",this.img_cable);
 
-    let url: string ="http://10.100.100.221/Api_App/img_net.php";
+    let url: string ="http://tmnoffice.dyndns.tv:8000/Api_App/img_net.php";
       
     let postdataset = new FormData();
 

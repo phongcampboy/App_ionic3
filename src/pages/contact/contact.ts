@@ -31,7 +31,7 @@ export class ContactPage {
       loading.dismiss();
     }, 800);
 
-    let url: string ="http://10.100.100.221/Api_App/img_cctv.php";
+    let url: string ="http://tmnoffice.dyndns.tv:8000/Api_App/img_cctv.php";
       
     let postdataset = new FormData();
 
